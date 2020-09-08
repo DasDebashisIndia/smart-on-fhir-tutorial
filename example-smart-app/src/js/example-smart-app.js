@@ -8,6 +8,17 @@
     }
 
     function onReady(smart)  {
+      var app = smart.api.fetchAll({
+                type: 'Appointment',
+                query : {
+                  date : 'ge2020-05-07T22:22:16.270Z',
+                  //practitioner : '593923'
+                  location : '21251399'
+                }
+              });         
+       
+      console.log("app ", app);
+      /*
       if (smart.hasOwnProperty('patient')) {
         var patient = smart.patient;
         var pt = patient.read();
@@ -74,6 +85,7 @@
       } else {
         onError();
       }
+      */
     }
 
     FHIR.oauth2.ready(onReady, onError);

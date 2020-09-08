@@ -32,16 +32,7 @@
                       }
                     }
                   });
-
-        var app = smart.patient.api.fetchAll({
-                    type: 'Appointment',
-                    query : {
-                      date : '2019'                      
-                    }
-                  }); 
-       
-        console.log("app ", app);
-        
+                  
         $.when(pt, obv).fail(onError);
 
         $.when(pt, obv).done(function(patient, obv) {
